@@ -1,0 +1,58 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+      - 'bugfix/**'
+      - 'hotfix/**'
+      - 'release/**'
+  pull_request:
+    branches:
+      - main
+      - develop
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+  DOTNET_NOLOGO: true
+  CONFIGURATION: Release
+
+jobs:
+  build_unit:
+    name: Build & Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # needed for accurate Sonar blame
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+            dotnet-version: 10.0.x
+      - name: Cache NuGet
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+      - name: Restore
+        run: dotnet restore
+      - name: Code Format (verify)
+        run: dotnet format --verify-no-changes
+      - name: Build
+        run: dotnet build --no-restore -c $CONFIGURATION
+      - name: Unit Tests
+        run: |
+          dotnet test tests/SMW.ServiceOrder.Domain.Tests/SMW.ServiceOrder.Domain.Tests.csproj -c $CONFIGURATION --no-build
+          dotnet test tests/SMW.ServiceOrder.Application.Tests/SMW.ServiceOrder.Application.Tests.csproj -c $CONFIGURATION --no-build
+          dotnet test tests/SMW.ServiceOrder.Infrastructure.Tests/SMW.ServiceOrder.Infrastructure.Tests.csproj -c $CONFIGURATION --no-build
+          dotnet test tests/SMW.ServiceOrder.Api.Tests/SMW.ServiceOrder.Api.Tests.csproj -c $CONFIGURATION --no-build

@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/solution items/" />
+  <Folder Name="/src/">
+    <Project Path="src/SMW.ServiceOrder.Api/SMW.ServiceOrder.Api.csproj" />
+    <Project Path="src/SMW.ServiceOrder.Application/SMW.ServiceOrder.Application.csproj" />
+    <Project Path="src/SMW.ServiceOrder.Domain/SMW.ServiceOrder.Domain.csproj" />
+    <Project Path="src/SMW.ServiceOrder.Infrastructure/SMW.ServiceOrder.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SMW.ServiceOrder.Api.Tests/SMW.ServiceOrder.Api.Tests.csproj" />
+    <Project Path="tests/SMW.ServiceOrder.Application.Tests/SMW.ServiceOrder.Application.Tests.csproj" />
+    <Project Path="tests/SMW.ServiceOrder.Domain.Tests/SMW.ServiceOrder.Domain.Tests.csproj" />
+    <Project Path="tests/SMW.ServiceOrder.Infrastructure.Tests/SMW.ServiceOrder.Infrastructure.Tests.csproj" />
+  </Folder>
+</Solution>
