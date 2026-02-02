@@ -1,4 +1,4 @@
-﻿namespace SMW.ServiceOrder.Application.Tests;
+namespace SMW.ServiceOrder.Application.Tests;
 
 public class UnitTest1
 {

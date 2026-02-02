@@ -1,4 +1,4 @@
-﻿namespace SMW.ServiceOrder.Infrastructure;
+namespace SMW.ServiceOrder.Infrastructure;
 
 public class Class1
 {

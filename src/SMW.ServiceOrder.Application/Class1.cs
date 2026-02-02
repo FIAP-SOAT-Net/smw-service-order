@@ -1,4 +1,4 @@
-﻿namespace SMW.ServiceOrder.Application;
+namespace SMW.ServiceOrder.Application;
 
 public class Class1
 {

@@ -1,4 +1,4 @@
-﻿namespace SMW.ServiceOrder.Api.Tests;
+namespace SMW.ServiceOrder.Api.Tests;
 
 public class UnitTest1
 {

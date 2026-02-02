@@ -1,4 +1,4 @@
-﻿namespace SMW.ServiceOrder.Domain;
+namespace SMW.ServiceOrder.Domain;
 
 public class Class1
 {
