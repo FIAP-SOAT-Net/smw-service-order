@@ -1,10 +1,13 @@
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Scalar.AspNetCore;
 using Serilog;
 using SMW.ServiceOrder.Api.Shared.HealthChecks;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+
+_ = builder.Services.AddEndpointsApiExplorer();
 
 _ = builder.Host.UseSerilog((context, configuration) => configuration
     .ReadFrom.Configuration(context.Configuration)
@@ -23,10 +26,12 @@ _ = builder.Services.AddControllers().AddJsonOptions(options =>
 _ = builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
 var app = builder.Build();
-if (app.Environment.IsDevelopment())
+_ = app.MapOpenApi();
+_ = app.MapScalarApiReference(options =>
 {
-    app.MapOpenApi();
-}
+    options.WithTitle( "Smart Mechanical Workshop - Service Order API" )
+        .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient);
+});
 
 _ = app.UseHttpsRedirection();
 _ = app.MapHealthChecks("/health", new HealthCheckOptions
@@ -50,7 +55,14 @@ _ = app.MapGet("/weatherforecast", () =>
             .ToArray();
         return forecast;
     })
-    .WithName("GetWeatherForecast");
+    .WithName("GetWeatherForecast")
+    .AddOpenApiOperationTransformer((operation, context, ct) =>
+    {
+        // Per-endpoint tweaks
+        operation.Summary     = "Gets the current weather report.";
+        operation.Description = "Returns a short description and emoji.";
+        return Task.CompletedTask;
+    });
 
 await app.RunAsync();
 
