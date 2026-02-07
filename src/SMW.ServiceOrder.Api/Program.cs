@@ -28,7 +28,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-_ = app.UseHttpsRedirection();_ = app.MapHealthChecks("/health", new HealthCheckOptions
+_ = app.UseHttpsRedirection();
+_ = app.MapHealthChecks("/health", new HealthCheckOptions
 {
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
