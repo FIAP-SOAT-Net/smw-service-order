@@ -39,7 +39,10 @@ _ = app.MapServiceOrderEndpoints();
 
 await app.RunAsync();
 
-public partial class Program
+namespace SMW.ServiceOrder.Api
 {
-    protected Program() { }
+    public partial class Program
+    {
+        protected Program() { }
+    }
 }

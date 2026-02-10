@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Text.Json.Serialization;
 
-namespace SMW.ServiceOrder.Domain.DTOs;
+namespace SMW.ServiceOrder.Domain.Shared;
 
 [ExcludeFromCodeCoverage]
 public sealed class Response<T>(Result<T> result, HttpStatusCode statusCode)

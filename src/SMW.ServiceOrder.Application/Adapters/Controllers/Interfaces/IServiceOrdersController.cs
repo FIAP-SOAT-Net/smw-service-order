@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using SMW.ServiceOrder.Domain.DTOs;
+using SMW.ServiceOrder.Application.Models;
+using SMW.ServiceOrder.Domain.Shared;
 
-namespace SMW.ServiceOrder.Application.Controllers.Interfaces;
+namespace SMW.ServiceOrder.Application.Adapters.Controllers.Interfaces;
 
 public interface IServiceOrdersController
 {

@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace SMW.ServiceOrder.Domain.DTOs;
+namespace SMW.ServiceOrder.Domain.Shared;
 
 [ExcludeFromCodeCoverage]
 public class Paginate<T> : IPaginate<T>

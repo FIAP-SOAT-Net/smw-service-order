@@ -1,4 +1,4 @@
-namespace SMW.ServiceOrder.Domain.DTOs;
+namespace SMW.ServiceOrder.Domain.Shared;
 
 public interface IPaginate<out T>
 {

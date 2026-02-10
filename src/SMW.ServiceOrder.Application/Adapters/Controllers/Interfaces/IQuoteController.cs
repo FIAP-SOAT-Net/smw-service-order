@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SMW.ServiceOrder.Domain.ValueObjects;
 
-namespace SMW.ServiceOrder.Application.Controllers.Interfaces;
+namespace SMW.ServiceOrder.Application.Adapters.Controllers.Interfaces;
 
 public interface IQuoteController
 {

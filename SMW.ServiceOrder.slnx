@@ -1,9 +1,14 @@
 <Solution>
   <Folder Name="/solution items/" />
-  <Folder Name="/src/">
-    <Project Path="src/SMW.ServiceOrder.Api/SMW.ServiceOrder.Api.csproj" />
-    <Project Path="src/SMW.ServiceOrder.Application/SMW.ServiceOrder.Application.csproj" />
+  <Folder Name="/src/" />
+  <Folder Name="/src/010 - Enterprise Business Rules/">
     <Project Path="src/SMW.ServiceOrder.Domain/SMW.ServiceOrder.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/020 - Application Business Rules/">
+    <Project Path="src/SMW.ServiceOrder.Application/SMW.ServiceOrder.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/040 - Frameworks &amp; Drivers/">
+    <Project Path="src/SMW.ServiceOrder.Api/SMW.ServiceOrder.Api.csproj" />
     <Project Path="src/SMW.ServiceOrder.Infrastructure/SMW.ServiceOrder.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/tests/">

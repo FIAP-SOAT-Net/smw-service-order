@@ -14,4 +14,13 @@
       <ProjectReference Include="..\SMW.ServiceOrder.Domain\SMW.ServiceOrder.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="16.0.0" />
+      <PackageReference Include="MediatR" Version="14.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="UseCases\ServiceOrders\" />
+    </ItemGroup>
+
 </Project>

@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi;
-using SMW.ServiceOrder.Application.Controllers.Interfaces;
+using SMW.ServiceOrder.Application.Adapters.Controllers.Interfaces;
+using SMW.ServiceOrder.Application.Models;
 using SMW.ServiceOrder.Domain.DTOs;
+using SMW.ServiceOrder.Domain.Shared;
 using SMW.ServiceOrder.Domain.ValueObjects;
 
 namespace SMW.ServiceOrder.Api.Endpoints;

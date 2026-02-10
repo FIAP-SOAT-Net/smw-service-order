@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace SMW.ServiceOrder.Domain.DTOs;
+namespace SMW.ServiceOrder.Domain.Shared;
 
 [ExcludeFromCodeCoverage]
 public class PaginatedRequest
